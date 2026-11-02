@@ -14,6 +14,8 @@ Setting: a dark "abyssal" studio with blue haze and marine snow drifting through
 | `build.py` | Generates the whole scene procedurally (shell, septa, gear train, tourbillon, bezel, stand, lighting) |
 | `materials.py` | 21 fully procedural materials (no image textures) |
 | `lib.py` | Geometry generators (lathe, sweeps, watch wheels, screws, jewels) + a shader-node DSL |
+| `animate.py` | Animates the movement (120-frame seamless loop) and sorts the scene into collections |
+| `anim_render.py` | Renders the animation: `python3 anim_render.py CAM_Macro renders/anim 1120 630 16` |
 | `render.py` | Renders one camera: `python3 render.py CAM_Hero out.png 100 128 1600 2000` |
 | `renders/` | Final renders |
 
@@ -24,6 +26,16 @@ pip install bpy==5.2.3        # Blender as a Python module (or open nautile.blen
 python3 build.py              # -> nautile.blend
 ./final.sh                    # -> renders/*.png
 ```
+
+## Animation
+
+Seamless 5 s loop (120 frames at 24 fps), stored as keyframes in `nautile.blend`. Press Play in Blender to watch the movement turn:
+- tourbillon cage: 120° per loop, which brings the three-arm cage back to an identical position;
+- balance: ±220° at 2 Hz, carried by the cage;
+- chamber gears: one turn per loop, alternating direction (each gear turns about its own axis through a `*_Axis` empty);
+- intermediate wheel: one turn; barrel: 72° (5-spoke symmetry); contrate pinion: two turns.
+
+Collections: Coquille, Mouvement, Habillage, Support, Environnement, Lumieres, Cameras.
 
 ## Construction notes
 

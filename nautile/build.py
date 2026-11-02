@@ -735,5 +735,10 @@ scene.view_settings.view_transform = 'AgX'; scene.view_settings.look = 'AgX - Pu
 scene.view_settings.exposure = 0.0
 r.image_settings.file_format = 'PNG'; r.image_settings.color_depth = '16'
 
+import animate
+animate.setup(scene)
+animate.organise(scene)
+scene.frame_set(1)
+
 bpy.ops.wm.save_as_mainfile(filepath=os.path.join(OUT, "nautile.blend"), compress=True)
 print("SAVED", sum(len(o.data.vertices) for o in bpy.data.objects if o.type == 'MESH'), "base verts")
