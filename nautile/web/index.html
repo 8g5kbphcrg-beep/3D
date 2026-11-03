@@ -112,6 +112,13 @@ footer{font-family:var(--mono);font-size:.75rem;color:var(--muted);letter-spacin
 
   <section class="gallery" aria-label="Rendus">
     <figure class="plate">
+      <video src="mouvement.mp4" poster="tourbillon.jpg" width="1120" height="630" autoplay muted loop playsinline controls style="width:100%;height:auto;display:block;border-radius:2px" aria-label="Animation du mouvement : la cage du tourbillon tourne, le balancier oscille et les rouages des chambres tournent."></video>
+      <figcaption>
+        <h3>Le mouvement en marche</h3>
+        <p>Boucle sans raccord de 5 secondes (120 images, Cycles). La cage du tourbillon fait 120° par boucle, ce qui la ramène à une position identique grâce à ses trois bras. Le balancier oscille à ±220°, et chaque roue tourne autour de son propre axe, en sens alterné d'une chambre à l'autre. L'animation est enregistrée dans le fichier .blend.</p>
+      </figcaption>
+    </figure>
+    <figure class="plate">
       <button class="shot" type="button" data-full="tourbillon.jpg" aria-label="Agrandir le rendu du tourbillon">
         <img src="tourbillon.jpg" width="1920" height="1080" alt="Gros plan sur le tourbillon, le barillet squeletté et la roue intermédiaire posés sur la nacre de la loge d'habitation.">
       </button>
@@ -171,6 +178,7 @@ footer{font-family:var(--mono);font-size:.75rem;color:var(--muted);letter-spacin
         <div class="row"><dt>Matériaux</dt><dd>21, 100 % procéduraux</dd></div>
         <div class="row"><dt>Couleur</dt><dd>AgX Punchy</dd></div>
         <div class="row"><dt>Optique</dt><dd>bokeh 7 lamelles, brume volumétrique</dd></div>
+        <div class="row"><dt>Animation</dt><dd>boucle 5 s, 120 images, 24 i/s</dd></div>
       </dl></div>
     </div>
   </section>
@@ -192,6 +200,7 @@ footer{font-family:var(--mono);font-size:.75rem;color:var(--muted);letter-spacin
       <li><code>build.py</code><span>Génère toute la scène de manière procédurale</span></li>
       <li><code>materials.py</code><span>Bibliothèque des 21 matériaux procéduraux</span></li>
       <li><code>lib.py</code><span>Générateurs de géométrie et mini-langage pour les nœuds de shader</span></li>
+      <li><code>animate.py</code><span>Animation du mouvement et rangement en collections</span></li>
       <li><code>render.py</code><span>Rendu d'une caméra en ligne de commande</span></li>
     </ul>
   </section>
